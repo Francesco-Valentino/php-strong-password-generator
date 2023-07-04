@@ -37,7 +37,7 @@
                         </button>
                     </form>
 
-                    <?php if(empty($_GET["lengthInput"])){ ?>
+                    <?php if(empty($_GET["lengthInput"]) || !is_numeric($_GET["lengthInput"])){ ?>
                         <div class="my-3 p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
                             Non hai inserito un valore corretto. Dovrai inserire un valore numerico per generare la tua nuova, <b>sicurissimissima</b> password.
                         </div>
