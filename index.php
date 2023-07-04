@@ -1,5 +1,9 @@
+<?php 
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +12,12 @@
     </head>
 
     <body>
-        
+        <div class="container">
+            <div class="row">
+                <div class="col-12 py-5">
+
+                </div>
+            </div>
+        </div>
     </body>
 </html>
