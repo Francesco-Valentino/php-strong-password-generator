@@ -1,5 +1,22 @@
 <?php 
+    function getPasswordbyLength($userLength){
+        $pool = "0123456789ABCDEFGHIJKLMNOPQRSTUWXYZabcdefghijklmnopqrstuwxyz!?&%$.,";
+        
+        $poolLength = strlen($pool) - 1;
 
+        $generatedPassword = [];
+
+        for ($i = 0; $i < $userLength; $i++) {
+
+            $randomValue = rand(0, $poolLength);
+
+            $generatedPassword[] = $pool[$randomValue];
+        };
+
+        $finalPassword = implode($generatedPassword);
+
+        return $finalPassword;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +56,16 @@
 
                     <?php if(empty($_GET["lengthInput"]) || !is_numeric($_GET["lengthInput"])){ ?>
                         <div class="my-3 p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
-                            Non hai inserito un valore corretto. Dovrai inserire un valore numerico per generare la tua nuova, <b>sicurissimissima</b> password.
+                            Dovrai inserire un valore numerico per generare la tua nuova, <b>sicurissimissima</b> password.
                         </div>
                     <?php } else{ ?>
                         <div class="my-3 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-                            Volevi la tua password lunga <?php $_GET["lengthInput"] ?> caratteri? Eccoti la tua password lunga <?php $_GET["lengthInput"] ?> caratteri!
+                            Volevi la tua password? Eccoti la tua password!
                         </div>
+
+                        <h2>
+                            <?php echo getPasswordbyLength($_GET["lengthInput"])?>
+                        </h2>
                     <?php } ?>
                 </div>
             </div>
