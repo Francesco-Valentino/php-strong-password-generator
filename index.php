@@ -23,19 +23,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 py-5">
-                    <form>
+                    <form action="./index.php" method="GET">
                         <div class="mb-3">
                             <label for="lengthInput" class="form-label">Lunghezza password</label>
                             
-                            <input type="email" class="form-control" id="lengthInput" aria-describedby="inputHelp">
+                            <input type="text" class="form-control" id="lengthInput" name="lengthInput" aria-describedby="inputHelp">
                             
-                            <div id="inputHelp" class="form-text">Il valore inserito determinerà la lunghezza della password. Molti caratteri, molta sicurezza.</div>
+                            <div id="inputHelp" class="form-text">Il valore numerico inserito determinerà la lunghezza della password. Molti caratteri, molta sicurezza.</div>
                         </div>
 
                         <button type="submit" class="btn btn-primary">
                             Genera password
                         </button>
                     </form>
+
+                    <?php if(empty($_GET["lengthInput"])){ ?>
+                        <div class="my-3 p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
+                            Non hai inserito un valore corretto. Dovrai inserire un valore numerico per generare la tua nuova, <b>sicurissimissima</b> password.
+                        </div>
+                    <?php } else{ ?>
+                        <div class="my-3 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                            Volevi la tua password lunga <?php $_GET["lengthInput"] ?> caratteri? Eccoti la tua password lunga <?php $_GET["lengthInput"] ?> caratteri!
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
