@@ -12,10 +12,30 @@
     </head>
 
     <body>
+        <h1 class="text-center">
+            Extremely strong password generator
+        </h1>
+
+        <h2 class="text-center">
+            Genera una password (abbastanza) sicura
+        </h2>
+
         <div class="container">
             <div class="row">
                 <div class="col-12 py-5">
+                    <form>
+                        <div class="mb-3">
+                            <label for="lengthInput" class="form-label">Lunghezza password</label>
+                            
+                            <input type="email" class="form-control" id="lengthInput" aria-describedby="inputHelp">
+                            
+                            <div id="inputHelp" class="form-text">Il valore inserito determinerà la lunghezza della password. Molti caratteri, molta sicurezza.</div>
+                        </div>
 
+                        <button type="submit" class="btn btn-primary">
+                            Genera password
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
